@@ -1,0 +1,121 @@
+{
+          [0;33m"consignor_no"[0m[0;37m => [0m[1;34m20[0m,
+              [0;33m"num_bids"[0m[0;37m => [0m[1;34m6[0m,
+         [0;33m"auction_start"[0m[0;37m => [0m[0;33m"2016-03-26T00:00:00-07:00"[0m,
+            [0;33m"item_title"[0m[0;37m => [0m[0;33m"1996 Ibanez John Petrucci JPM100 P2 Multi-Color Solid Body Electric Guitar, Serial # F511367."[0m,
+                  [0;33m"tags"[0m[0;37m => [0m[],
+               [0;33m"sale_no"[0m[0;37m => [0m[1;34m7127[0m,
+            [0;33m"department"[0m[0;37m => [0m[
+        [1;37m[0] [0m{
+                        [0;33m"name"[0m[0;37m => [0m[0;33m"Entertainment"[0m,
+                    [0;33m"category"[0m[0;37m => [0m[
+                [1;37m[0] [0m{
+                    [0;33m"name"[0m[0;37m => [0m[0;33m"Musical Instruments"[0m
+                }
+            ],
+            [0;33m"department_child"[0m[0;37m => [0m[
+                [1;37m[0] [0m{
+                    [0;33m"name"[0m[0;37m => [0m[0;33m"Musical Instruments"[0m
+                }
+            ]
+        }
+    ],
+      [0;33m"auction_location"[0m[0;37m => [0m[0;33m"Beverly Hills, CA"[0m,
+           [0;33m"description"[0m[0;37m => [0m[0;33m"1996 Ibanez John Petrucci JPM100 P2 Multi-Color Solid Body Electric Guitar, Serial # F511367. All original, like new signature model for the Dream Theater guitarist. Comes with Petrucci signed COA, case candy and all paperwork. Original hard case included. Price Guide Value $1,700"[0m,
+          [0;33m"last_updated"[0m[0;37m => [0m[0;33m"2024-08-08T16:50:01.360"[0m,
+             [0;33m"buy_price"[0m[0;37m => [0m[1;34m2375[0m,
+                   [0;33m"_id"[0m[0;37m => [0m[0;33m"5388718"[0m,
+          [0;33m"session_desc"[0m[0;37m => [0m[0;33m"Signature Floor Session 1"[0m,
+                [0;33m"lot_no"[0m[0;37m => [0m[1;34m85126[0m,
+             [0;33m"item_type"[0m[0;37m => [0m[
+        [1;37m[0] [0m[0;33m"Electric Guitars"[0m
+    ],
+           [0;33m"auction_end"[0m[0;37m => [0m[0;33m"2016-03-26T11:00:00-07:00"[0m,
+            [0;33m"session_no"[0m[0;37m => [0m[1;34m1[0m,
+          [0;33m"auction_type"[0m[0;37m => [0m[0;33m"Signature Auction"[0m,
+     [0;33m"_run_ml_inference"[0m[0;37m => [0m[1;32mtrue[0m,
+             [0;33m"lot_id_no"[0m[0;37m => [0m[1;34m20007[0m,
+    [0;33m"searchengineitemid"[0m[0;37m => [0m[1;34m5388718[0m,
+        [0;33m"price_realized"[0m[0;37m => [0m[1;34m2375[0m,
+          [0;33m"auction_year"[0m[0;37m => [0m[1;34m2016[0m,
+                [0;33m"format"[0m[0;37m => [0m[
+        [1;37m[0] [0m[0;33m"Auction Archives"[0m
+    ],
+          [0;33m"auction_name"[0m[0;37m => [0m[0;33m"id_7127||2016 March 26 Vintage Guitars & Musical Instruments Signature Auction - Beverly Hills 7127"[0m
+}
+{
+          [0;33m"consignor_no"[0m[0;37m => [0m[1;34m32[0m,
+              [0;33m"num_bids"[0m[0;37m => [0m[1;34m4[0m,
+         [0;33m"auction_start"[0m[0;37m => [0m[0;33m"2011-04-27T00:00:00-05:00"[0m,
+            [0;33m"item_title"[0m[0;37m => [0m[0;33m"Gold Nugget."[0m,
+                  [0;33m"tags"[0m[0;37m => [0m[],
+            [0;33m"coin_grade"[0m[0;37m => [0m[1;34m0[0m,
+               [0;33m"sale_no"[0m[0;37m => [0m[1;34m1154[0m,
+            [0;33m"department"[0m[0;37m => [0m[
+        [1;37m[0] [0m{
+                [0;33m"name"[0m[0;37m => [0m[0;33m"Art, Antiques, Nature & Science"[0m,
+            [0;33m"category"[0m[0;37m => [0m[
+                [1;37m[0] [0m{
+                              [0;33m"name"[0m[0;37m => [0m[0;33m"Minerals"[0m,
+                    [0;33m"category_child"[0m[0;37m => [0m[
+                        [1;37m[0] [0m{
+                            [0;33m"name"[0m[0;37m => [0m[0;33m"Golds"[0m
+                        }
+                    ]
+                }
+            ]
+        },
+        [1;37m[1] [0m{
+                        [0;33m"name"[0m[0;37m => [0m[0;33m"Coins: US, World and Ancients"[0m,
+                    [0;33m"category"[0m[0;37m => [0m[
+                [1;37m[0] [0m{
+                    [0;33m"name"[0m[0;37m => [0m[0;33m"Nuggets"[0m
+                }
+            ],
+            [0;33m"department_child"[0m[0;37m => [0m[
+                [1;37m[0] [0m{
+                    [0;33m"name"[0m[0;37m => [0m[0;33m"US Coins"[0m
+                }
+            ]
+        },
+        [1;37m[2] [0m{
+                [0;33m"name"[0m[0;37m => [0m[0;33m"Historical & Books"[0m,
+            [0;33m"category"[0m[0;37m => [0m[
+                [1;37m[0] [0m{
+                    [0;33m"category_child"[0m[0;37m => [0m[
+                        [1;37m[0] [0m{
+                            [0;33m"name"[0m[0;37m => [0m[0;33m"Golds"[0m
+                        }
+                    ],
+                              [0;33m"name"[0m[0;37m => [0m[0;33m"Minerals"[0m
+                }
+            ]
+        }
+    ],
+      [0;33m"auction_location"[0m[0;37m => [0m[0;33m"Rosemont, IL"[0m,
+               [0;33m"cert_no"[0m[0;37m => [0m[1;34m661000[0m,
+               [0;33m"service"[0m[0;37m => [0m[
+        [1;37m[0] [0m[0;33m"Uncertified"[0m
+    ],
+          [0;33m"last_updated"[0m[0;37m => [0m[0;33m"2024-08-16T14:53:01.020"[0m,
+             [0;33m"buy_price"[0m[0;37m => [0m[1;34m517.5[0m,
+           [0;33m"description"[0m[0;37m => [0m[0;33m"Gold Nugget. Weight 9.7 gm, likely California origin, alluvial features polished, a small but fascinating piece for display."[0m,
+                   [0;33m"_id"[0m[0;37m => [0m[0;33m"3699239"[0m,
+          [0;33m"auction_type"[0m[0;37m => [0m[0;33m"Signature Auction"[0m,
+                [0;33m"lot_no"[0m[0;37m => [0m[1;34m7086[0m,
+          [0;33m"session_desc"[0m[0;37m => [0m[0;33m"Signature Floor Session 5"[0m,
+           [0;33m"auction_end"[0m[0;37m => [0m[0;33m"2011-05-01T00:00:00-05:00"[0m,
+            [0;33m"session_no"[0m[0;37m => [0m[1;34m5[0m,
+     [0;33m"SearchEngineIndex"[0m[0;37m => [0m[
+        [1;37m[0] [0m[0;33m"search-archive"[0m
+    ],
+     [0;33m"_run_ml_inference"[0m[0;37m => [0m[1;32mtrue[0m,
+             [0;33m"lot_id_no"[0m[0;37m => [0m[1;34m32025[0m,
+    [0;33m"searchengineitemid"[0m[0;37m => [0m[1;34m3699239[0m,
+        [0;33m"price_realized"[0m[0;37m => [0m[1;34m517.5[0m,
+          [0;33m"auction_year"[0m[0;37m => [0m[1;34m2011[0m,
+                [0;33m"format"[0m[0;37m => [0m[
+        [1;37m[0] [0m[0;33m"Auction Archives"[0m
+    ],
+          [0;33m"auction_name"[0m[0;37m => [0m[0;33m"id_1154||2011 April Rosemont CSNS Signature & Platinum Night US Coin Auction 1154"[0m
+}

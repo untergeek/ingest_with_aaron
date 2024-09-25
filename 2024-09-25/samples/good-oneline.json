@@ -1,0 +1,1 @@
+{"eventTime": "08:51:08", "source": { "file": "DataLogger", "line": 27 }, "eventType": "GPS update", "eventData": { "altitude": 35.76, "verticalAccuracy": 12, "latitude": 52.55497710, "longitude": -0.38856690, "horizontalAccuracy": 15.27, "speed": 0.60 }}
