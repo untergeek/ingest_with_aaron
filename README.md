@@ -1,2 +1,3 @@
-# ingest_with_aaron
-Sample data and configurations from the Ingest with Aaron series
+# Data from the Ingest with Aaron series
+
+Episodes are dated, so that hopefully makes it easier to find something in particular.
