@@ -1,0 +1,81 @@
+## Original from_json.conf file
+input {
+  file {
+    path => [ "/Users/buh/Logstash/samples/read_by_line" ]
+    codec => json { target => "[@metadata]" }
+  }
+}
+
+filter {
+  mutate { remove_field => [ "event", "host", "log", "@version", "@timestamp" ] }
+}
+
+output {
+  file {
+    path => "../logfiles/from_json.ansi"
+    codec => rubydebug { metadata => true }
+  }
+}
+## Output
+{
+    [0;33m"@metadata"[0m[0;37m => [0m{
+        [0;33m"json"[0m[0;37m => [0m[0;33m"{\"_id\":\"5388718\",\"searchengineitemid\":5388718,\"sale_no\":7127,\"session_no\":1,\"lot_no\":85126,\"lot_id_no\":20007,\"consignor_no\":20,\"format\":[\"Auction Archives\"],\"department\":[{\"name\":\"Entertainment\",\"department_child\":[{\"name\":\"Musical Instruments\"}],\"category\":[{\"name\":\"Musical Instruments\"}]}],\"item_type\":[\"Electric Guitars\"],\"item_title\":\"1996 Ibanez John Petrucci JPM100 P2 Multi-Color Solid Body Electric Guitar, Serial # F511367.\",\"description\":\"1996 Ibanez John Petrucci JPM100 P2 Multi-Color Solid Body Electric Guitar, Serial # F511367. All original, like new signature model for the Dream Theater guitarist. Comes with Petrucci signed COA, case candy and all paperwork. Original hard case included. Price Guide Value $1,700\",\"auction_name\":\"id_7127||2016 March 26 Vintage Guitars & Musical Instruments Signature Auction - Beverly Hills 7127\",\"session_desc\":\"Signature Floor Session 1\",\"auction_type\":\"Signature Auction\",\"auction_year\":2016,\"auction_location\":\"Beverly Hills, CA\",\"auction_start\":\"2016-03-26T00:00:00-07:00\",\"auction_end\":\"2016-03-26T11:00:00-07:00\",\"num_bids\":6,\"price_realized\":2375.00,\"buy_price\":2375.00,\"last_updated\":\"2024-08-08T16:50:01.360\",\"_run_ml_inference\":true}"[0m,
+        [0;33m"host"[0m[0;37m => [0m[0;33m"M"[0m,
+        [0;33m"path"[0m[0;37m => [0m[0;33m"/Users/buh/Logstash/samples/read_by_line"[0m
+    }
+}
+## Changes:
+filter {
+  json { source => "[@metadata][json]" }
+  mutate { remove_field => [ "event", "host", "log", "@version", "@timestamp" ] }
+}
+## Output
+{
+             [0;33m"item_type"[0m[0;37m => [0m[
+        [1;37m[0] [0m[0;33m"Electric Guitars"[0m
+    ],
+            [0;33m"session_no"[0m[0;37m => [0m[1;34m1[0m,
+           [0;33m"description"[0m[0;37m => [0m[0;33m"1996 Ibanez John Petrucci JPM100 P2 Multi-Color Solid Body Electric Guitar, Serial # F511367. All original, like new signature model for the Dream Theater guitarist. Comes with Petrucci signed COA, case candy and all paperwork. Original hard case included. Price Guide Value $1,700"[0m,
+          [0;33m"session_desc"[0m[0;37m => [0m[0;33m"Signature Floor Session 1"[0m,
+      [0;33m"auction_location"[0m[0;37m => [0m[0;33m"Beverly Hills, CA"[0m,
+              [0;33m"num_bids"[0m[0;37m => [0m[1;34m6[0m,
+    [0;33m"searchengineitemid"[0m[0;37m => [0m[1;34m5388718[0m,
+             [0;33m"lot_id_no"[0m[0;37m => [0m[1;34m20007[0m,
+          [0;33m"consignor_no"[0m[0;37m => [0m[1;34m20[0m,
+           [0;33m"auction_end"[0m[0;37m => [0m[0;33m"2016-03-26T11:00:00-07:00"[0m,
+          [0;33m"auction_name"[0m[0;37m => [0m[0;33m"id_7127||2016 March 26 Vintage Guitars & Musical Instruments Signature Auction - Beverly Hills 7127"[0m,
+            [0;33m"department"[0m[0;37m => [0m[
+        [1;37m[0] [0m{
+            [0;33m"department_child"[0m[0;37m => [0m[
+                [1;37m[0] [0m{
+                    [0;33m"name"[0m[0;37m => [0m[0;33m"Musical Instruments"[0m
+                }
+            ],
+                        [0;33m"name"[0m[0;37m => [0m[0;33m"Entertainment"[0m,
+                    [0;33m"category"[0m[0;37m => [0m[
+                [1;37m[0] [0m{
+                    [0;33m"name"[0m[0;37m => [0m[0;33m"Musical Instruments"[0m
+                }
+            ]
+        }
+    ],
+            [0;33m"item_title"[0m[0;37m => [0m[0;33m"1996 Ibanez John Petrucci JPM100 P2 Multi-Color Solid Body Electric Guitar, Serial # F511367."[0m,
+          [0;33m"last_updated"[0m[0;37m => [0m[0;33m"2024-08-08T16:50:01.360"[0m,
+     [0;33m"_run_ml_inference"[0m[0;37m => [0m[1;32mtrue[0m,
+          [0;33m"auction_type"[0m[0;37m => [0m[0;33m"Signature Auction"[0m,
+             [0;33m"@metadata"[0m[0;37m => [0m{
+        [0;33m"json"[0m[0;37m => [0m[0;33m"{\"_id\":\"5388718\",\"searchengineitemid\":5388718,\"sale_no\":7127,\"session_no\":1,\"lot_no\":85126,\"lot_id_no\":20007,\"consignor_no\":20,\"format\":[\"Auction Archives\"],\"department\":[{\"name\":\"Entertainment\",\"department_child\":[{\"name\":\"Musical Instruments\"}],\"category\":[{\"name\":\"Musical Instruments\"}]}],\"item_type\":[\"Electric Guitars\"],\"item_title\":\"1996 Ibanez John Petrucci JPM100 P2 Multi-Color Solid Body Electric Guitar, Serial # F511367.\",\"description\":\"1996 Ibanez John Petrucci JPM100 P2 Multi-Color Solid Body Electric Guitar, Serial # F511367. All original, like new signature model for the Dream Theater guitarist. Comes with Petrucci signed COA, case candy and all paperwork. Original hard case included. Price Guide Value $1,700\",\"auction_name\":\"id_7127||2016 March 26 Vintage Guitars & Musical Instruments Signature Auction - Beverly Hills 7127\",\"session_desc\":\"Signature Floor Session 1\",\"auction_type\":\"Signature Auction\",\"auction_year\":2016,\"auction_location\":\"Beverly Hills, CA\",\"auction_start\":\"2016-03-26T00:00:00-07:00\",\"auction_end\":\"2016-03-26T11:00:00-07:00\",\"num_bids\":6,\"price_realized\":2375.00,\"buy_price\":2375.00,\"last_updated\":\"2024-08-08T16:50:01.360\",\"_run_ml_inference\":true}"[0m,
+        [0;33m"host"[0m[0;37m => [0m[0;33m"M"[0m,
+        [0;33m"path"[0m[0;37m => [0m[0;33m"/Users/buh/Logstash/samples/read_by_line"[0m
+    },
+                [0;33m"format"[0m[0;37m => [0m[
+        [1;37m[0] [0m[0;33m"Auction Archives"[0m
+    ],
+               [0;33m"sale_no"[0m[0;37m => [0m[1;34m7127[0m,
+          [0;33m"auction_year"[0m[0;37m => [0m[1;34m2016[0m,
+         [0;33m"auction_start"[0m[0;37m => [0m[0;33m"2016-03-26T00:00:00-07:00"[0m,
+                [0;33m"lot_no"[0m[0;37m => [0m[1;34m85126[0m,
+        [0;33m"price_realized"[0m[0;37m => [0m[1;34m2375.0[0m,
+             [0;33m"buy_price"[0m[0;37m => [0m[1;34m2375.0[0m,
+                   [0;33m"_id"[0m[0;37m => [0m[0;33m"5388718"[0m
+}

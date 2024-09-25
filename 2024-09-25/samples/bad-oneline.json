@@ -1,0 +1,2 @@
+{ "device_0xDEADBEEF": { "key1": "value1", "lastSeen": "2024-09-23 17:53:22.462", "subkey_0x0000F00D": { "key2": "value2", "lastSeen": "2024-09-22 04:36:09.119" } } }
+{ "device_0xFACEBEAD": { "key1": "value1", "lastSeen": "2024-01-23 12:34:56.789", "subkey_0x1111DEAF": { "key2": "value2", "lastSeen": "2024-01-23 12:34:56.789" } } }

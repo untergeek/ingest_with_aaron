@@ -1,0 +1,32 @@
+---
+## The stdin input is great for testing, however...
+## it does not allow automatic pipeline reloading!
+
+# - pipeline.id: from_stdin
+#   pipeline.workers: 1
+#   pipeline.batch.size: 1
+#   path.config: "../pipelines/from_stdin.conf"
+
+## The generator input is great for testing, however...
+## it does not allow automatic pipeline reloading!
+# - pipeline.id: from_generator
+#   pipeline.workers: 1
+#   pipeline.batch.size: 1
+#   path.config: "../pipelines/from_generator.conf"
+
+## File input
+# - pipeline.id: from_file
+#   pipeline.workers: 1
+#   pipeline.batch.size: 1
+#   path.config: "../pipelines/from_file.conf"
+
+- pipeline.id: from_json
+  pipeline.workers: 1
+  pipeline.batch.size: 1
+  path.config: "../pipelines/from_json.conf"
+
+- pipeline.id: from_beats
+  pipeline.workers: 1
+  pipeline.batch.size: 1
+  path.config: "../pipelines/from_beats.conf"
+

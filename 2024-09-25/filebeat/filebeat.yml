@@ -1,0 +1,39 @@
+---
+filebeat.inputs:
+- type: filestream
+  id: ingest-with-aaron
+  enabled: true
+  paths:
+    - /Users/buh/Ingest/samples/filebeat_by_line
+
+output.logstash:
+  hosts: ["localhost:5044"]
+
+processors:
+  - decode_json_fields:
+      fields: ["message"]
+      process_array: false
+      max_depth: "1"
+      target: ""
+      overwrite_keys: false
+      add_error_key: true
+  - decode_json_fields:
+      fields: ["json"]
+      process_array: false
+      max_depth: "2"
+      target: ""
+      overwrite_keys: false
+      add_error_key: true
+  - drop_fields:
+      when:
+        has_fields: ["json", "message"]
+      fields: ["json", "message"]
+      ignore_missing: false
+
+# These are not for performance, but for lower latency during the presentation
+# DO NOT USE THESE SETTINGS IN YOUR ENVIRONMENT
+queue.mem.flush.timeout: 1s
+idle_connection_timeout: 60s
+worker: 1
+bulk_max_size: 10
+
