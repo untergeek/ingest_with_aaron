@@ -103,8 +103,7 @@ The resulting block should look like this:
       "monitor",
       "read_pipeline",
       "manage_index_templates"
-    ],
-    ... # Other entries below
+    ]
 }
 ```
 
@@ -182,3 +181,6 @@ Feel free to edit the selections at the bottom accordingly.
 ## Install Agent on each host
 
 Follow the "add agent" dialog
+
+### More to follow!
+Stay tuned
