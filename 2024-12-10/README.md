@@ -104,6 +104,7 @@ The resulting block should look like this:
       "read_pipeline",
       "manage_index_templates"
     ]
+  }
 }
 ```
 
