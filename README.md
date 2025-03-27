@@ -2,6 +2,11 @@
 
 Episodes are dated, so that hopefully makes it easier to find something in particular.
 
+* [How to ingest JSON data in Logstash and filebeat](2024-09-25/README.md)
+* [Using Logstash with Fleet](2024-12-10/README.md)
+* [Ingest Pipelines 101](2025-02-25/README.md)
+* [Ingest Pipelines 201](2025-03-27/README.md)
+
 ## Have an idea for an episode?
 
 Do you have an Ingest-related problem you'd like help with? 
