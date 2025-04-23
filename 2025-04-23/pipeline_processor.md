@@ -2,7 +2,7 @@
 
 # Nested Pipelines with the `pipeline` Processor
 
-The `pipeline` processor allows you to call other pipelines, enabling modular and reusable workflows. This approach simplifies complex data processing by breaking it into smaller, reusable components that can be chained together.
+The [`pipeline` processor](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/pipeline-processor.html) allows you to call other pipelines, enabling modular and reusable workflows. This approach simplifies complex data processing by breaking it into smaller, reusable components that can be chained together.
 
 ## Modular Pipeline Design
 
@@ -10,7 +10,7 @@ Modular pipeline design involves creating small, focused pipelines that perform 
 
 ## Reusing Common Processor Flows as Stand-Alone Pipelines
 
-Let’s create a `log_parsing` pipeline that parses Apache log lines using a `grok` processor and reuses the `ingest_lag` pipeline (defined earlier) to calculate the ingestion lag.
+Let’s create a `log_parsing` pipeline that parses Apache log lines using a [`grok` processor](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/grok-processor.html) and reuses the `ingest_lag` pipeline (defined earlier) to calculate the ingestion lag.
 
 ```markdown
 PUT _ingest/pipeline/log_parsing
@@ -88,8 +88,10 @@ POST _ingest/pipeline/log_parsing/_simulate
 
 This pipeline:
 
-- Uses the `grok` processor to parse the `message` field, extracting the client IP into `client.ip`. If parsing fails, it logs the error in `pipeline_errors.log_parsing.grok`.
-- Calls the `ingest_lag` pipeline to add `event.ingested` and calculate `lag_in_seconds` (rounded to three decimal places, e.g., 76.781 seconds for a ~76,781 ms lag).
+- Uses the [`grok` processor](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/grok-processor.html) to parse the [`message` field](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/grok-processor.html#grok-processor-field) with specified [`patterns`](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/grok-processor.html#grok-processor-patterns), extracting the client IP into `client.ip`. If parsing fails, it logs the error in `pipeline_errors.log_parsing.grok` using the [`Set` Processor](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/set-processor.html).
+- Calls the `ingest_lag` pipeline by its [`name`](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/pipeline-processor.html#pipeline-processor-name) to add `event.ingested` and calculate `lag_in_seconds` (rounded to three decimal places, e.g., 76.781 seconds for a ~76,781 ms lag).
+
+The [`PUT _ingest/pipeline` API](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/put-pipeline-api.html) is used to create the pipeline, and the [`Simulate Pipeline` API](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/simulate-pipeline-api.html) tests it.
 
 ## Chaining Pipelines for Complex Workflows
 
