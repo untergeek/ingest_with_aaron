@@ -6,6 +6,7 @@ Episodes are dated, so that hopefully makes it easier to find something in parti
 * `2024-12-10:` [Using Logstash with Fleet](2024-12-10/README.md)
 * `2025-02-25:` [Ingest Pipelines 101](2025-02-25/README.md)
 * `2025-03-27:` [Ingest Pipelines 201](2025-03-27/README.md)
+* `2025-04-23:` [Ingest Pipelines 301](2025-04-23/README.md)
 
 ## Have an idea for an episode?
 
