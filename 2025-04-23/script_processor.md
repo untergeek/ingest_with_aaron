@@ -2,11 +2,11 @@
 
 # The `script` Processor: Extracting Even More Value
 
-The `script` processor uses Painless scripting to perform custom transformations, offering flexibility for complex logic.
+The [`script` processor](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/script-processor.html) uses [Painless scripting](https://www.elastic.co/guide/en/elasticsearch/painless/8.18/painless-lang-spec.html) to perform custom transformations, offering flexibility for complex logic.
 
 ## Understanding the Script Processor and Painless
 
-Painless is Elasticsearch’s secure scripting language. It’s used in the `script` processor to manipulate fields, perform calculations, or apply conditional logic.
+[Painless](https://www.elastic.co/guide/en/elasticsearch/painless/8.18/painless-lang-spec.html) is Elasticsearch’s secure scripting language, used in the [`script` processor](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/script-processor.html) to manipulate fields, perform calculations, or apply conditional logic in the [Painless ingest context](https://www.elastic.co/guide/en/elasticsearch/painless/8.18/painless-ingest-processor-context.html).
 
 ## Calculate Ingest Lag Using a Script Processor
 
@@ -93,11 +93,11 @@ POST _ingest/pipeline/ingest_lag/_simulate
 }
 ```
 
-The `lag_in_seconds` field shows a 75.911-second lag, calculated as the difference between `_ingest.timestamp` (`2025-04-23T03:21:45.779697029Z`) and `@timestamp` (`2025-04-23T03:20:29.869Z`), rounded to three decimal places. If the script fails (e.g., due to malformed timestamps or missing fields), the `on_failure` block sets `lag_in_seconds` to `-1` and logs the error in `pipeline_errors.ingest_lag.script`.
+The `lag_in_seconds` field shows a 75.911-second lag, calculated as the difference between `_ingest.timestamp` (`2025-04-23T03:21:45.779697029Z`) and `@timestamp` (`2025-04-23T03:20:29.869Z`), rounded to three decimal places. If the script fails (e.g., due to malformed timestamps or missing fields), the `on_failure` block sets `lag_in_seconds` to `-1` and logs the error in `pipeline_errors.ingest_lag.script`. The [`Simulate Pipeline` API](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/simulate-pipeline-api.html) is used to test the pipeline, and the [`Set` Processor](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/set-processor.html) stores the ingestion timestamp with the [`field`](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/set-processor.html#set-processor-field) and [`value`](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/set-processor.html#set-processor-value) options. The [`source`](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/script-processor.html#script-processor-source) script performs the lag calculation using `ZonedDateTime` and `ChronoUnit.MILLIS` in the [Painless ingest context](https://www.elastic.co/guide/en/elasticsearch/painless/8.18/painless-ingest-processor-context.html).
 
 ## Making It a Stand-Alone Pipeline
 
-This `script` processor can be reused in other pipelines, as we’ll see in later sections.
+This [`script` processor](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/script-processor.html) can be reused in other pipelines, as we’ll see in later sections.
 
 ---
 
