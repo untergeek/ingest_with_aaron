@@ -1,0 +1,5 @@
+---
+pipeline.ecs_compatibility: v8
+config.reload.automatic: true
+config.reload.interval: 3s
+
