@@ -1,0 +1,52 @@
+input {
+  snmp {
+    interval => 60
+    hosts => [
+      {
+        host => "udp:172.19.0.241/161"
+        community => "public"
+        version => "2c"
+      }
+    ]
+    get => [
+      "1.3.6.1.2.1.1.5.0"             # sysName.0
+    ]
+    tables => [
+      {
+        "name" => "interfaces"
+        "columns" => [
+          "1.3.6.1.2.1.31.1.1.1.1",   # ifName
+          "1.3.6.1.2.1.31.1.1.1.6",   # ifHCInOctets
+          "1.3.6.1.2.1.31.1.1.1.10",  # ifHCOutOctets
+          "1.3.6.1.2.1.31.1.1.1.18"   # ifAlias
+        ]
+      }
+    ]
+    target => "[@metadata][snmp]"
+    oid_mapping_format => "ruby_snmp"
+    tags => ["interfaces"]
+  }
+}
+
+filter {
+  if "interfaces" in [tags] { split { field => "[@metadata][snmp][interfaces]" } }
+
+  # Rename fields
+  mutate {
+    rename => {
+      "[@metadata][snmp][RFC1158-MIB::sysName.0]" => "[host][hostname]"
+      "[@metadata][snmp][interfaces][IF-MIB::ifHCOutOctets]" => "[interface][egress][bytes]"
+      "[@metadata][snmp][interfaces][IF-MIB::ifHCInOctets]" => "[interface][ingress][bytes]"
+      "[@metadata][snmp][interfaces][IF-MIB::ifName]" => "[interface][name]"
+      "[@metadata][snmp][interfaces][IF-MIB::ifAlias]" => "[interface][alias]"
+      "[@metadata][snmp][interfaces][index]" => "[interface][id]"
+    }
+    remove_tag => [ "interfaces" ]
+  }
+}
+
+output {
+  stdout {
+    codec => rubydebug # { metadata => true }
+  }
+}
